@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="变量与运算符运算符&amp;gt; 经常用做方法调用的关键字最好不要拿来命名。 &amp;gt;">
+<meta name="description" content="变量与运算符运算符&amp;gt; int str tuple（不可改变）值类型 &amp;gt; list set dict (可变) 引用类型 &amp;gt; id函数(显示某一个变量在内存中的地址) &amp;gt; 变量的内存地址是16进制的 &amp;gt; 字符串是不可改变的，但是通过+号运算符的话，两个字符串相加，成为一个新的字符串，那么就不违反字符串不可改变的规则 &amp;gt; // 是整除的意思 &amp;gt; 余数使用 %">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python基础知识笔记(二)">
 <meta property="og:url" content="http://yoursite.com/2017/10/13/PythonBase2/index.html">
 <meta property="og:site_name" content="时光">
-<meta property="og:description" content="变量与运算符运算符&amp;gt; 经常用做方法调用的关键字最好不要拿来命名。 &amp;gt;">
+<meta property="og:description" content="变量与运算符运算符&amp;gt; int str tuple（不可改变）值类型 &amp;gt; list set dict (可变) 引用类型 &amp;gt; id函数(显示某一个变量在内存中的地址) &amp;gt; 变量的内存地址是16进制的 &amp;gt; 字符串是不可改变的，但是通过+号运算符的话，两个字符串相加，成为一个新的字符串，那么就不违反字符串不可改变的规则 &amp;gt; // 是整除的意思 &amp;gt; 余数使用 %">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-01T17:43:51.978Z">
+<meta property="og:updated_time" content="2017-11-02T04:47:59.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python基础知识笔记(二)">
-<meta name="twitter:description" content="变量与运算符运算符&amp;gt; 经常用做方法调用的关键字最好不要拿来命名。 &amp;gt;">
+<meta name="twitter:description" content="变量与运算符运算符&amp;gt; int str tuple（不可改变）值类型 &amp;gt; list set dict (可变) 引用类型 &amp;gt; id函数(显示某一个变量在内存中的地址) &amp;gt; 变量的内存地址是16进制的 &amp;gt; 字符串是不可改变的，但是通过+号运算符的话，两个字符串相加，成为一个新的字符串，那么就不违反字符串不可改变的规则 &amp;gt; // 是整除的意思 &amp;gt; 余数使用 %">
 
 
 
@@ -304,8 +304,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/python基础/" itemprop="url" rel="index">
+                    <span itemprop="name">python基础</span>
                   </a>
                 </span>
 
@@ -341,8 +341,21 @@
       
 
       
-        <h1 id="变量与运算符"><a href="#变量与运算符" class="headerlink" title="变量与运算符"></a>变量与运算符</h1><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><pre><code>&gt; 经常用做方法调用的关键字最好不要拿来命名。
-&gt;
+        <h1 id="变量与运算符"><a href="#变量与运算符" class="headerlink" title="变量与运算符"></a>变量与运算符</h1><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><pre><code>&gt; int str tuple（不可改变）值类型
+&gt; list set dict (可变) 引用类型
+&gt; id函数(显示某一个变量在内存中的地址)
+&gt; 变量的内存地址是16进制的
+&gt; 字符串是不可改变的，但是通过+号运算符的话，两个字符串相加，成为一个新的字符串，那么就不违反字符串不可改变的规则
+&gt; // 是整除的意思
+&gt; 余数使用 % 号
+&gt; 次方用 ** 来计算
+&gt; 运算符归纳总结
+![](http://oyqymf34p.bkt.clouddn.com/python%E8%BF%90%E7%AE%97%E7%AC%A6.png)
+</code></pre><h2 id="元组和列表的区别"><a href="#元组和列表的区别" class="headerlink" title="元组和列表的区别"></a>元组和列表的区别</h2><pre><code>1. 元组不可变，列表可变
+2. 往列表中添加元素可以使用append函数， 例如
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">c = [1, 2, 3]</div><div class="line">c.append(4)</div><div class="line">c =&gt; [1, 2, 3, 4]</div></pre></td></tr></table></figure>
+
+3. 访问元组中的列表或者列表中的列表或者元组中的元组中的元素可以参考二二维数组
 </code></pre>
       
     </div>
@@ -512,7 +525,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量与运算符"><span class="nav-number">1.</span> <span class="nav-text">变量与运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">1.1.</span> <span class="nav-text">运算符</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量与运算符"><span class="nav-number">1.</span> <span class="nav-text">变量与运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">1.1.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组和列表的区别"><span class="nav-number">1.2.</span> <span class="nav-text">元组和列表的区别</span></a></li></ol></li></ol></div>
             
 
           </div>

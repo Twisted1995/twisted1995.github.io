@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="类型的重要概念 布尔类型属于Number类型。字符串和元组是不可变的， 而列表是可变的。元组中只有一个元素的，等于括号不存在，比如。    1(&amp;quot;hello&amp;quot;) = &amp;quot;hello&amp;quot; 如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。">
+<meta name="description" content="类型的重要概念 布尔类型属于Number类型。字符串和元组是不可变的， 而列表是可变的。元组中只有一个元素的，等于括号不存在，比如。  1(&amp;quot;hello&amp;quot;) = &amp;quot;hello&amp;quot; 如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python基础知识笔记">
 <meta property="og:url" content="http://yoursite.com/2017/07/12/PythonBase/index.html">
 <meta property="og:site_name" content="时光">
-<meta property="og:description" content="类型的重要概念 布尔类型属于Number类型。字符串和元组是不可变的， 而列表是可变的。元组中只有一个元素的，等于括号不存在，比如。    1(&amp;quot;hello&amp;quot;) = &amp;quot;hello&amp;quot; 如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。">
+<meta property="og:description" content="类型的重要概念 布尔类型属于Number类型。字符串和元组是不可变的， 而列表是可变的。元组中只有一个元素的，等于括号不存在，比如。  1(&amp;quot;hello&amp;quot;) = &amp;quot;hello&amp;quot; 如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oyqymf34p.bkt.clouddn.com/pythonBase1.png">
-<meta property="og:updated_time" content="2017-11-02T04:50:49.098Z">
+<meta property="og:updated_time" content="2017-11-02T04:51:59.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python基础知识笔记">
-<meta name="twitter:description" content="类型的重要概念 布尔类型属于Number类型。字符串和元组是不可变的， 而列表是可变的。元组中只有一个元素的，等于括号不存在，比如。    1(&amp;quot;hello&amp;quot;) = &amp;quot;hello&amp;quot; 如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。">
+<meta name="twitter:description" content="类型的重要概念 布尔类型属于Number类型。字符串和元组是不可变的， 而列表是可变的。元组中只有一个元素的，等于括号不存在，比如。  1(&amp;quot;hello&amp;quot;) = &amp;quot;hello&amp;quot; 如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。">
 <meta name="twitter:image" content="http://oyqymf34p.bkt.clouddn.com/pythonBase1.png">
 
 
@@ -344,18 +344,20 @@
 
       
         <h1 id="类型的重要概念"><a href="#类型的重要概念" class="headerlink" title="类型的重要概念"></a>类型的重要概念</h1><blockquote>
-<p>布尔类型属于Number类型。<br>字符串和元组是不可变的， 而列表是可变的。<br>元组中只有一个元素的，等于括号不存在，比如。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(&quot;hello&quot;) = &quot;hello&quot;</div></pre></td></tr></table></figure></p>
+<p>布尔类型属于Number类型。<br>字符串和元组是不可变的， 而列表是可变的。<br>元组中只有一个元素的，等于括号不存在，比如。<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(&quot;hello&quot;) = &quot;hello&quot;</div></pre></td></tr></table></figure></p>
 <p>如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。<br><a id="more"></a></p>
 <h1 id="集合-set-的相关操作"><a href="#集合-set-的相关操作" class="headerlink" title="集合(set)的相关操作"></a>集合(set)的相关操作</h1><pre><code>1. 集合是无序的，所以不能yong&quot;[0]&quot;这样的操作
 2. 集合是不重复的
 3. 集合也是可以用len函数来计算长度的
 4. 集合可以用&quot;-&quot;来求两个集合的差值， “&amp;”来求交集，&quot;|&quot;求并集
 </code></pre></blockquote>
-<h1 id="字典的相关操作-key-value键值对是其最基本的概念"><a href="#字典的相关操作-key-value键值对是其最基本的概念" class="headerlink" title="字典的相关操作(key-value键值对是其最基本的概念)"></a>字典的相关操作(key-value键值对是其最基本的概念)</h1><pre><code>&gt; 通过key来访问value, 字典不能有相同的key, 如果有，会自动删除前面重复的key以及他的value
-&gt; 数字1和字符串1会被识别为两个不同的key
-</code></pre><h1 id="变量和运算符"><a href="#变量和运算符" class="headerlink" title="变量和运算符"></a>变量和运算符</h1><pre><code>&gt; 命名要优雅， 可读性要高
-&gt; 系统关键字不能出现在变量名中,比如and, if
-</code></pre><p><img src="http://oyqymf34p.bkt.clouddn.com/pythonBase1.png" alt=""></p>
+<h1 id="字典的相关操作-key-value键值对是其最基本的概念"><a href="#字典的相关操作-key-value键值对是其最基本的概念" class="headerlink" title="字典的相关操作(key-value键值对是其最基本的概念)"></a>字典的相关操作(key-value键值对是其最基本的概念)</h1><blockquote>
+<p>通过key来访问value, 字典不能有相同的key, 如果有，会自动删除前面重复的key以及他的value<br>数字1和字符串1会被识别为两个不同的key</p>
+</blockquote>
+<h1 id="变量和运算符"><a href="#变量和运算符" class="headerlink" title="变量和运算符"></a>变量和运算符</h1><blockquote>
+<p>命名要优雅， 可读性要高<br>系统关键字不能出现在变量名中,比如and, if</p>
+</blockquote>
+<p><img src="http://oyqymf34p.bkt.clouddn.com/pythonBase1.png" alt=""></p>
 
       
     </div>

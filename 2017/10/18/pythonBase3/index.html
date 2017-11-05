@@ -83,11 +83,11 @@
 <meta name="keywords" content="Code">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python分支、循环、条件与枚举">
-<meta property="og:url" content="http://yoursite.com/2017/11/02/pythonBase3/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/10/18/pythonBase3/index.html">
 <meta property="og:site_name" content="时光">
 <meta property="og:description" content="表达式的概念 表达式(Expression)是运算符(operator)和操作数(operand)所构成的序列 且(and)运算优先级大于或(or)运算 改变优先级可以使用括号(和数学基本概念是一样的0.0)  流程控制语句 if 123myMood = Trueif myMood:      print(&apos;go to school&apos;)  if else 12345myMood = Trueif">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-05T04:09:17.565Z">
+<meta property="og:updated_time" content="2017-11-05T15:15:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python分支、循环、条件与枚举">
 <meta name="twitter:description" content="表达式的概念 表达式(Expression)是运算符(operator)和操作数(operand)所构成的序列 且(and)运算优先级大于或(or)运算 改变优先级可以使用括号(和数学基本概念是一样的0.0)  流程控制语句 if 123myMood = Trueif myMood:      print(&apos;go to school&apos;)  if else 12345myMood = Trueif">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/02/pythonBase3/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/18/pythonBase3/"/>
 
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/02/pythonBase3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/18/pythonBase3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Twisted1995">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-02T22:33:43+08:00">
-                2017-11-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T10:56:32+08:00">
+                2017-10-18
               </time>
             
 
@@ -355,11 +355,48 @@
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myMood = <span class="keyword">True</span></div><div class="line"><span class="keyword">if</span> myMood:</div><div class="line">      <span class="keyword">print</span>(<span class="string">'go to school'</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">      <span class="keyword">print</span>(<span class="string">'嘿嘿嘿哈'</span>)</div></pre></td></tr></table></figure>
 </li>
 <li><p>python建议用两个单词，中间加下划线，来命名</p>
-</li>
+<a id="more"></a></li>
 <li><p>an example</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">user_account = <span class="string">"xiaoming"</span></div><div class="line">user_password = <span class="string">"20150910"</span></div><div class="line"></div><div class="line"><span class="builtin-name">print</span>(<span class="string">"please input your account:"</span>)</div><div class="line">account = input()</div><div class="line"><span class="builtin-name">print</span>(<span class="string">"please input your password"</span>)</div><div class="line">password = input()</div><div class="line"><span class="keyword">if</span> account == user_account <span class="keyword">and</span> password == user_password:</div><div class="line">  <span class="builtin-name">print</span>(<span class="string">"success"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">  <span class="builtin-name">print</span>(<span class="string">"fail"</span>)</div></pre></td></tr></table></figure>
 </li>
 <li><p>在pylint中，只要不在函数和类中的变量，都会被他认为是一个常量</p>
+</li>
+<li>pass是在没有进一步的逻辑的时候使用，阻止程序报错</li>
+<li>如果函数层级太多，可以把其中的一部分逻辑提取成一个函数，减少代码的层级</li>
+<li>python中不需要太多的括号之类的，一般都是用缩进来决定逻辑的优先级</li>
+<li><p>an example:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> = input()</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"a is"</span> + a)</span></span></div><div class="line"><span class="keyword">if</span> <span class="selector-tag">a</span> == <span class="number">1</span>:</div><div class="line">    print(<span class="string">"apple"</span>)</div><div class="line">elif <span class="selector-tag">a</span> == <span class="number">2</span>:</div><div class="line">    print(<span class="string">"banana"</span>)</div><div class="line">elif <span class="selector-tag">a</span> == <span class="number">3</span>:</div><div class="line">    print(<span class="string">"orange"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">   print(<span class="string">"QAQ"</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>python中没有switch这个用法</p>
+</li>
+<li>input接收的是一个字符串<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1></li>
+<li>while循环主要是用于递归</li>
+<li><p>for循环主要是用来遍历/循环 序列或者集合，字典</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="selector-tag">a</span>:</div><div class="line">    print(x)</div></pre></td></tr></table></figure>
+</li>
+<li><p>打印子列表的话,可以嵌套一层循环</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>], (<span class="number">100</span>, <span class="number">200</span>)]</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="selector-tag">a</span>:</div><div class="line">    <span class="keyword">for</span> <span class="selector-tag">b</span> <span class="keyword">in</span> x:</div><div class="line">        print(b)</div></pre></td></tr></table></figure>
+</li>
+<li><p>for同样可以和else进行搭配使用， else内的逻辑一般是列表循环完的时候执行</p>
+</li>
+<li>break强行终止循环 continue直接进行下一步的逻辑</li>
+<li><p>以下是示例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  a = [1,2,3]</div><div class="line"></div><div class="line">  <span class="keyword">for</span> x <span class="keyword">in</span> a:</div><div class="line">      <span class="keyword">if</span> x == 2:</div><div class="line">          <span class="built_in">break</span></div><div class="line">      <span class="built_in">print</span>(x)</div><div class="line"><span class="comment"># 1</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  a = [1,2,3]</div><div class="line">  <span class="keyword">for</span> x <span class="keyword">in</span> a:</div><div class="line">      <span class="keyword">if</span> x == 2:</div><div class="line">          <span class="built_in">continue</span></div><div class="line">      <span class="built_in">print</span>(x)</div><div class="line"><span class="comment"># 1 3</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>for和range</p>
+<blockquote>
+<p>代码实例</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(0, 10):</div><div class="line">    <span class="builtin-name">print</span>(x)</div><div class="line"><span class="comment"># 0 1 2 3 4 5 6 7 8 9</span></div></pre></td></tr></table></figure>
+<p>range(a, b) a为起始数字，而b为偏移量， 即总共有多少数字<br>代码示例2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(0, 10, 2):</div><div class="line">     <span class="built_in">print</span>(x)</div><div class="line"> <span class="comment"># 0 2 4 6 8</span></div></pre></td></tr></table></figure>
+<p>代码示例3</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="built_in">in</span> range(<span class="number">0</span>,<span class="number">10</span>,<span class="number">2</span>):</div><div class="line">    print(x, <span class="keyword">end</span>=' | <span class="type">')</span></div><div class="line"><span class="type"># 0</span> | <span class="type">2</span> | <span class="type">4</span> | <span class="type">6</span> | <span class="type">8</span></div></pre></td></tr></table></figure>
+<p>代码示例4</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="built_in">in</span> range(<span class="number">10</span>, <span class="number">0</span>, <span class="number">-2</span>):</div><div class="line">    print(x, <span class="keyword">end</span>=' | <span class="type">')</span></div><div class="line"><span class="type"># 10</span> | <span class="type">8</span> | <span class="type">4</span> | <span class="type">6</span> | <span class="type">2</span></div></pre></td></tr></table></figure>
+<p>代码示例4</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">a</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="built_in">len</span>(<span class="keyword">a</span>), <span class="number">2</span>):</div><div class="line">    print(<span class="keyword">a</span>[i], <span class="keyword">end</span>=<span class="string">' | '</span>)</div><div class="line"></div><div class="line"><span class="comment"># 1 | 3 | 5 | 7</span></div></pre></td></tr></table></figure>
+</blockquote>
 </li>
 </ol>
 
@@ -546,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表达式的概念"><span class="nav-number">1.</span> <span class="nav-text">表达式的概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流程控制语句"><span class="nav-number">2.</span> <span class="nav-text">流程控制语句</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#表达式的概念"><span class="nav-number">1.</span> <span class="nav-text">表达式的概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#流程控制语句"><span class="nav-number">2.</span> <span class="nav-text">流程控制语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#循环语句"><span class="nav-number">3.</span> <span class="nav-text">循环语句</span></a></li></ol></div>
             
 
           </div>

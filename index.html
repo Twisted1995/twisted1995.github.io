@@ -357,8 +357,12 @@
 <li><p>if else</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myMood = <span class="keyword">True</span></div><div class="line"><span class="keyword">if</span> myMood:</div><div class="line">      <span class="keyword">print</span>(<span class="string">'go to school'</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">      <span class="keyword">print</span>(<span class="string">'嘿嘿嘿哈'</span>)</div></pre></td></tr></table></figure>
 </li>
-<li><p>python建议用两个单词，中间加下划线，来命名<br>4.</p>
+<li><p>python建议用两个单词，中间加下划线，来命名</p>
+</li>
+<li><p>an example</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">user_account = <span class="string">"xiaoming"</span></div><div class="line">user_password = <span class="string">"20150910"</span></div><div class="line"></div><div class="line"><span class="builtin-name">print</span>(<span class="string">"please input your account:"</span>)</div><div class="line">account = input()</div><div class="line"><span class="builtin-name">print</span>(<span class="string">"please input your password"</span>)</div><div class="line">password = input()</div><div class="line"><span class="keyword">if</span> account == user_account <span class="keyword">and</span> password == user_password:</div><div class="line">  <span class="builtin-name">print</span>(<span class="string">"success"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">  <span class="builtin-name">print</span>(<span class="string">"fail"</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>在pylint中，只要不在函数和类中的变量，都会被他认为是一个常量</p>
 </li>
 </ol>
 
@@ -502,7 +506,7 @@
       
         
           <h1 id="变量与运算符"><a href="#变量与运算符" class="headerlink" title="变量与运算符"></a>变量与运算符</h1><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><blockquote>
-<p>int str tuple（不可改变）值类型<br>list set dict (可变) 引用类型<br>id函数(显示某一个变量在内存中的地址)<br>变量的内存地址是16进制的<br>字符串是不可改变的，但是通过+号运算符的话，两个字符串相加，成为一个新的字符串，那么就不违反字符串不可改变的规则<br>// 是整除的意思<br>余数使用 % 号<br>次方用 ** 来计算<br>is 和 == 的区别是 == 是比较两个变量的值， 而is是比较两个变量的身份是否相等(比较两个变量的内存地址)<br>运算符归纳总结<br>python中的isinstance函数是用来判断变量的类型的isinstance(a, str)，str位置可以接受元组的类型<br>
+<p>int str tuple（不可改变）值类型<br>list set dict (可变) 引用类型<br>id函数(显示某一个变量在内存中的地址)<br>变量的内存地址是16进制的<br>字符串是不可改变的，但是通过+号运算符的话，两个字符串相加，成为一个新的字符串，那么就不违反字符串不可改变的规则<br>// 是整除的意思<br>余数使用 % 号<br>次方用 ** 来计算<br>is 和 == 的区别是 == 是比较两个变量的值， 而is是比较两个变量的身份是否相等(比较两个变量的内存地址)<br>运算符归纳总结<br>python中的isinstance函数是用来判断变量的类型的isinstance(a, str)，str位置可以接受元组的类型<br>python中不存在常量, 因为他没有机制去阻止我们修改，但是为了防止pylint报警告， 会将常量的字母都大写<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/13/PythonBase2/#more" rel="contents">

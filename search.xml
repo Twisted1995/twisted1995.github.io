@@ -36,7 +36,7 @@
   <entry>
     <title><![CDATA[python数据类型]]></title>
     <url>%2F2017%2F07%2F12%2FPythonBase%2F</url>
-    <content type="text"><![CDATA[类型的重要概念 布尔类型属于Number类型。字符串和元组是不可变的， 而列表是可变的。元组中只有一个元素的，等于括号不存在，比如。 1("hello") = "hello" 如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。 集合(set)的相关操作1. 集合是无序的，所以不能yong&quot;[0]&quot;这样的操作 2. 集合是不重复的 3. 集合也是可以用len函数来计算长度的 4. 集合可以用&quot;-&quot;来求两个集合的差值， “&amp;”来求交集，&quot;|&quot;求并集 字典的相关操作(key-value键值对是其最基本的概念) 通过key来访问value, 字典不能有相同的key, 如果有，会自动删除前面重复的key以及他的value数字1和字符串1会被识别为两个不同的key 变量和运算符 命名要优雅， 可读性要高系统关键字不能出现在变量名中,比如and, if]]></content>
+    <content type="text"><![CDATA[类型的重要概念 布尔类型属于Number类型。字符串和元组是不可变的， 而列表是可变的。元组中只有一个元素的，等于括号不存在，比如。(“hello”) = “hello”如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。 集合(set)的相关操作1. 集合是无序的，所以不能yong&quot;[0]&quot;这样的操作 2. 集合是不重复的 3. 集合也是可以用len函数来计算长度的 4. 集合可以用&quot;-&quot;来求两个集合的差值， “&amp;”来求交集，&quot;|&quot;求并集 字典的相关操作(key-value键值对是其最基本的概念) 通过key来访问value, 字典不能有相同的key, 如果有，会自动删除前面重复的key以及他的value数字1和字符串1会被识别为两个不同的key 变量和运算符 命名要优雅， 可读性要高系统关键字不能出现在变量名中,比如and, if]]></content>
       <categories>
         <category>python基础</category>
       </categories>
@@ -47,7 +47,7 @@
   <entry>
     <title><![CDATA[自用atom插件及相关介绍]]></title>
     <url>%2F2017%2F05%2F12%2FatomPackage%2F</url>
-    <content type="text"><![CDATA[activate-power-mode 能够让你的代码飞起来！可以像老师写板书一样飞舞粉笔灰(0_0) atom-beautify 可以格式化基本上你见过的任何的代码(包括SQL文件) atom-clock 就是在编辑器右下角加一个显示时间的东东 atom-bracket-highlight 高亮成对的括号让你不会再找不到另一半! atom-ternjs 补全Node.js代码!补全JQuery代码!补全Angular代码!补全ES6代码段！ atom-django django语法支持，代码段提示 atom-python-run 在atom编辑器中运行python代码，而不是命令行中 autocomplete-python-jedi python补全(使用jedi) autoclose-html 自动闭合html标签 autocomplete-paths自动补全文件路径 pigments高亮显示对应的颜色RGB minimap不解释！！ minimap-pigments在代码地图中高亮显示RGB颜色 emmet快速生成html代码div.hello (Tab)=&gt; 1&lt;div class="hello"&gt;&lt;/div&gt; highlight-selected高亮显示选择的单词，标签 linter语法检查(可安装对应的检查工具)linter-eslintlinter-csslintlinter-tslint react-snippetsreact代码段提示 platformio-ide-terminal在atom中嵌入一个终端 atom-wx微信语法支持 language-babel支持graphql, jsx等(react开发者必备) json-colorer彩色化json(看起来更直观) regex-railroad-diagram图形化正则表达式(据说很赞，详细使用参见github) MagicPython更好的python语法高亮支持 filesize在编辑器左下角显示当前文件大小]]></content>
+    <content type="text"><![CDATA[activate-power-mode 能够让你的代码飞起来！可以像老师写板书一样飞舞粉笔灰(0_0) atom-beautify可以格式化基本上你见过的任何的代码(包括SQL文件) atom-clock就是在编辑器右下角加一个显示时间的东东 atom-bracket-highlight 高亮成对的括号让你不会再找不到另一半! atom-ternjs 补全Node.js代码!补全JQuery代码!补全Angular代码!补全ES6代码段！ atom-djangodjango语法支持，代码段提示 atom-python-run在atom编辑器中运行python代码，而不是命令行中 autocomplete-python-jedipython补全(使用jedi) autoclose-html自动闭合html标签 autocomplete-paths自动补全文件路径 pigments高亮显示对应的颜色RGB minimap不解释！！ minimap-pigments在代码地图中高亮显示RGB颜色 emmet快速生成html代码div.hello (Tab)=&gt; 1&lt;div class="hello"&gt;&lt;/div&gt; highlight-selected高亮显示选择的单词，标签 linter语法检查(可安装对应的检查工具)linter-eslintlinter-csslintlinter-tslint react-snippetsreact代码段提示 platformio-ide-terminal在atom中嵌入一个终端 atom-wx微信语法支持 language-babel支持graphql, jsx等(react开发者必备) json-colorer彩色化json(看起来更直观) regex-railroad-diagram图形化正则表达式(据说很赞，详细使用参见github) MagicPython更好的python语法高亮支持 filesize在编辑器左下角显示当前文件大小]]></content>
       <categories>
         <category>Atom编辑器</category>
       </categories>

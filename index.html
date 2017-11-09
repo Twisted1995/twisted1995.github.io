@@ -385,8 +385,8 @@
 </blockquote>
 </li>
 </ol>
-<h1 id="import导入模块"><a href="#import导入模块" class="headerlink" title="import导入模块"></a>import导入模块</h1><blockquote>
-<p>我们应该更多的考虑模块复用的方法，因为很多时候一个模块的功能是要被大量使用的，可以通过import关键字来导入<br>一定要先引入，再使用！<br>也可以用as关键字来将命名空间和模块命名成一个单独的变量，比如 import scrapy.requests as rq 那么我们使用requests的时候就可以用rq来代替了<br>也可以这样: from scrapy import requests</p>
+<h1 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h1><blockquote>
+<p>我们应该更多的考虑模块复用的方法，因为很多时候一个模块的功能是要被大量使用的，可以通过import关键字来导入<br>一定要先引入，再使用！<br>也可以用as关键字来将命名空间和模块命名成一个单独的变量，比如 import scrapy.requests as rq 那么我们使用requests的时候就可以用rq来代替了<br>也可以这样: from scrapy import requests<br>可以通过from xxx import *导入所有<br>代码示例<br> <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span><span class="bash">  __all__ = [<span class="string">"a"</span>, <span class="string">"b"</span>] <span class="comment"># a b就是要用*号导入的模块(该段写在被导入的模块中)</span></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"></span></div></pre></td></tr></table></figure></p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">

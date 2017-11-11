@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="时光">
 <meta property="og:description" content="python中的包 包中包含模块，模块中包含类，类中包含函数和变量 一般一个文件夹可以默认为一个包 如果想要一个文件夹变成python的一个包，那么该文件夹下应该包含init.py，这个文件本身也算一个模块init模块的名字和文件夹的名字同名    导入模块 我们应该更多的考虑模块复用的方法，因为很多时候一个模块的功能是要被大量使用的，可以通过import关键字来导入一定要先引入，再使用！也可以用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-09T09:38:52.048Z">
+<meta property="og:updated_time" content="2017-11-11T17:40:16.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python包、模块、函数和作用域">
 <meta name="twitter:description" content="python中的包 包中包含模块，模块中包含类，类中包含函数和变量 一般一个文件夹可以默认为一个包 如果想要一个文件夹变成python的一个包，那么该文件夹下应该包含init.py，这个文件本身也算一个模块init模块的名字和文件夹的名字同名    导入模块 我们应该更多的考虑模块复用的方法，因为很多时候一个模块的功能是要被大量使用的，可以通过import关键字来导入一定要先引入，再使用！也可以用">
@@ -384,10 +384,12 @@
 </li>
 </ol>
 <h1 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h1><blockquote>
-<p>我们应该更多的考虑模块复用的方法，因为很多时候一个模块的功能是要被大量使用的，可以通过import关键字来导入<br>一定要先引入，再使用！<br>也可以用as关键字来将命名空间和模块命名成一个单独的变量，比如 import scrapy.requests as rq 那么我们使用requests的时候就可以用rq来代替了<br>也可以这样: from scrapy import requests<br>可以通过from xxx import *导入所有<br>代码示例</p>
+<p>我们应该更多的考虑模块复用的方法，因为很多时候一个模块的功能是要被大量使用的，可以通过import关键字来导入<br>一定要先引入，再使用！<br>也可以用as关键字来将命名空间和模块命名成一个单独的变量，比如 import scrapy.requests as rq 那么我们使用requests的时候就可以用rq来代替了<br>也可以这样: from scrapy import requests<br>可以通过from xxx import *导入所有<br>代码示例<br>    <figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">__all__ = [<span class="string">"a"</span>, <span class="string">"b"</span>] <span class="comment"># a b就是想要被用*导入的模块</span></div></pre></td></tr></table></figure></p>
 </blockquote>
-<pre><code><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">__all__ = [<span class="string">"a"</span>, <span class="string">"b"</span>] <span class="comment"># a b就是想要被用*导入的模块</span></div></pre></td></tr></table></figure>
-</code></pre><a id="more"></a>
+<a id="more"></a>
+<blockquote>
+<p>同时引入多个模块<br>  from xxx import a, b, c<br>如果要倒入很多的方法或者变量之类的, 要换行隔开，在第一行的末尾加上一个反斜杠，否则会报错，或者加一个括号也可以<br>无论导入的是模块，变量还是方法，都会运行<strong>init</strong>.py<br>可以在init.py中定义all, 这样就可以通过 from x import * 导入x包下制定的模块(init和all左右都自带双下划线)<br>包和模块是不会被重复的导入的<br>要避免循环导入</p>
+</blockquote>
 
       
     </div>

@@ -1,69 +1,314 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[python中的函数]]></title>
-    <url>%2F2017%2F11%2F10%2FpythonBase5%2F</url>
-    <content type="text"><![CDATA[python中的函数 函数的特性 功能性 隐藏细节 避免编写重复的代码roundround可以设置保留一个浮点数小数点后几位 round(a, x) x即保留的位数(会四舍五入)在python shell中可以使用help()函数来查找python相关内置函数的使用文档如果想要打印python之禅的话可以使用 import this 然后回车python函数中可以没有值传入在函数体内可以使用return关键字， 如果没有，那么默认是返回Nonepython递归默认次数为995次，不过可以自定义(sys.setrecursionlimit(1000000))123456789 def add(x, y): result = x + y return result # 如果不加，就会返回None def toPrint(code): print(code) add(2, 3)toPrint("I love Python")]]></content>
-      <categories>
-        <category>python基础</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[python包、模块、函数和作用域]]></title>
-    <url>%2F2017%2F11%2F02%2FPythonBase4%2F</url>
-    <content type="text"><![CDATA[python中的包 包中包含模块，模块中包含类，类中包含函数和变量 一般一个文件夹可以默认为一个包 如果想要一个文件夹变成python的一个包，那么该文件夹下应该包含init.py，这个文件本身也算一个模块init模块的名字和文件夹的名字同名 导入模块 我们应该更多的考虑模块复用的方法，因为很多时候一个模块的功能是要被大量使用的，可以通过import关键字来导入一定要先引入，再使用！也可以用as关键字来将命名空间和模块命名成一个单独的变量，比如 import scrapy.requests as rq 那么我们使用requests的时候就可以用rq来代替了也可以这样: from scrapy import requests可以通过from xxx import *导入所有代码示例 1__all__ = ["a", "b"] # a b就是想要被用*导入的模块 同时引入多个模块 from xxx import a, b, c如果要倒入很多的方法或者变量之类的, 要换行隔开，在第一行的末尾加上一个反斜杠，否则会报错，或者加一个括号也可以无论导入的是模块，变量还是方法，都会运行init.py可以在init.py中定义all, 这样就可以通过 from x import * 导入x包下制定的模块(init和all左右都自带双下划线)包和模块是不会被重复的导入的要避免循环导入]]></content>
-      <categories>
-        <category>python基础</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[python分支、循环、条件与枚举]]></title>
-    <url>%2F2017%2F10%2F18%2FpythonBase3%2F</url>
-    <content type="text"><![CDATA[表达式的概念 表达式(Expression)是运算符(operator)和操作数(operand)所构成的序列 且(and)运算优先级大于或(or)运算 改变优先级可以使用括号(和数学基本概念是一样的0.0) 流程控制语句 if 123myMood = Trueif myMood: print('go to school') if else 12345myMood = Trueif myMood: print('go to school')else: print('嘿嘿嘿哈') python建议用两个单词，中间加下划线，来命名 an example 1234567891011user_account = "xiaoming"user_password = "20150910"print("please input your account:")account = input()print("please input your password")password = input()if account == user_account and password == user_password: print("success")else: print("fail") 在pylint中，只要不在函数和类中的变量，都会被他认为是一个常量 pass是在没有进一步的逻辑的时候使用，阻止程序报错 如果函数层级太多，可以把其中的一部分逻辑提取成一个函数，减少代码的层级 python中不需要太多的括号之类的，一般都是用缩进来决定逻辑的优先级 an example: 12345678910a = input()print("a is" + a)if a == 1: print("apple")elif a == 2: print("banana")elif a == 3: print("orange")else: print("QAQ") python中没有switch这个用法 input接收的是一个字符串循环语句 while循环主要是用于递归 for循环主要是用来遍历/循环 序列或者集合，字典 123a = [1, 2, 3, 4, 5, 6]for x in a: print(x) 打印子列表的话,可以嵌套一层循环 1234a = [[1,2,3,4,5,6], (100, 200)]for x in a: for b in x: print(b) for同样可以和else进行搭配使用， else内的逻辑一般是列表循环完的时候执行 break强行终止循环 continue直接进行下一步的逻辑 以下是示例 1234567 a = [1,2,3] for x in a: if x == 2: break print(x)# 1 123456 a = [1,2,3] for x in a: if x == 2: continue print(x)# 1 3 for和range 代码实例 123for x in range(0, 10): print(x)# 0 1 2 3 4 5 6 7 8 9 range(a, b) a为起始数字，而b为偏移量， 即总共有多少数字代码示例2 123for x in range(0, 10, 2): print(x) # 0 2 4 6 8 代码示例3 123for x in range(0,10,2): print(x, end=' | ')# 0 | 2 | 4 | 6 | 8 代码示例4 123for x in range(10, 0, -2): print(x, end=' | ')# 10 | 8 | 4 | 6 | 2 代码示例4 12345a = [1,2,3,4,5,6,7,8]for x in range(0, len(a), 2): print(a[i], end=' | ')# 1 | 3 | 5 | 7 1234a = [1,2,3,4,5,6,7,8]b = a[0:len(a):2]print(b)# [1, 3, 5, 7]]]></content>
-      <categories>
-        <category>python基础</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[python变量与运算符]]></title>
-    <url>%2F2017%2F10%2F13%2FPythonBase2%2F</url>
-    <content type="text"><![CDATA[变量与运算符运算符 int str tuple（不可改变）值类型list set dict (可变) 引用类型id函数(显示某一个变量在内存中的地址)变量的内存地址是16进制的字符串是不可改变的，但是通过+号运算符的话，两个字符串相加，成为一个新的字符串，那么就不违反字符串不可改变的规则// 是整除的意思余数使用 % 号次方用 ** 来计算is 和 == 的区别是 == 是比较两个变量的值， 而is是比较两个变量的身份是否相等(比较两个变量的内存地址)运算符归纳总结python中的isinstance函数是用来判断变量的类型的isinstance(a, str)，str位置可以接受元组的类型python中不存在常量, 因为他没有机制去阻止我们修改，但是为了防止pylint报警告， 会将常量的字母都大写 运算符优先级 元组和列表的区别1. 元组不可变，列表可变。 2. 往列表中添加元素可以使用append函数， 例如 123c = [1, 2, 3]c.append(4)c =&gt; [1, 2, 3, 4] 3. 访问元组中的列表或者列表中的列表或者元组中的元组中的元素可以参考二维数组。 4. 列表与列表和元组和元组之间可以做比较，都是从内部第一个元素开始作比较，以此类推。 5. 一个整数(0为False), 浮点数，列表，元组， 字典默认为True,一个空(&apos;&apos;)默认为False,空列表，元组为False 6. 如果[] or [1] 他默认返回True的， and默认返回false 7. 1 and 2 默认返回大的那个， 1 or 2 返回1(因为他从第一个元素开始检索，只要碰到为真的，那就返回真的那个元素) 字典的成员运算符 字典的成员运算时通过键值对(key-value)中的key来进行运算。]]></content>
-      <categories>
-        <category>python基础</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[python数据类型]]></title>
-    <url>%2F2017%2F07%2F12%2FPythonBase%2F</url>
-    <content type="text"><![CDATA[类型的重要概念 布尔类型属于Number类型。字符串和元组是不可变的， 而列表是可变的。元组中只有一个元素的，等于括号不存在，比如。(“hello”) = “hello”如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。 集合(set)的相关操作1. 集合是无序的，所以不能yong&quot;[0]&quot;这样的操作 2. 集合是不重复的 3. 集合也是可以用len函数来计算长度的 4. 集合可以用&quot;-&quot;来求两个集合的差值， “&amp;”来求交集，&quot;|&quot;求并集 字典的相关操作(key-value键值对是其最基本的概念) 通过key来访问value, 字典不能有相同的key, 如果有，会自动删除前面重复的key以及他的value数字1和字符串1会被识别为两个不同的key 变量和运算符 命名要优雅， 可读性要高系统关键字不能出现在变量名中,比如and, if]]></content>
-      <categories>
-        <category>python基础</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[自用atom插件及相关介绍]]></title>
-    <url>%2F2017%2F05%2F12%2FatomPackage%2F</url>
-    <content type="text"><![CDATA[activate-power-mode 能够让你的代码飞起来！可以像老师写板书一样飞舞粉笔灰(0_0) atom-beautify可以格式化基本上你见过的任何的代码(包括SQL文件) atom-clock就是在编辑器右下角加一个显示时间的东东 atom-bracket-highlight 高亮成对的括号让你不会再找不到另一半! atom-ternjs 补全Node.js代码!补全JQuery代码!补全Angular代码!补全ES6代码段！ atom-djangodjango语法支持，代码段提示 atom-python-run在atom编辑器中运行python代码，而不是命令行中 autocomplete-python-jedipython补全(使用jedi) autoclose-html自动闭合html标签 autocomplete-paths自动补全文件路径 pigments高亮显示对应的颜色RGB minimap不解释！！ minimap-pigments在代码地图中高亮显示RGB颜色 emmet快速生成html代码div.hello (Tab)=&gt; 1&lt;div class="hello"&gt;&lt;/div&gt; highlight-selected高亮显示选择的单词，标签 linter语法检查(可安装对应的检查工具)linter-eslintlinter-csslintlinter-tslint react-snippetsreact代码段提示 platformio-ide-terminal在atom中嵌入一个终端 atom-wx微信语法支持 language-babel支持graphql, jsx等(react开发者必备) json-colorer彩色化json(看起来更直观) regex-railroad-diagram图形化正则表达式(据说很赞，详细使用参见github) MagicPython更好的python语法高亮支持 filesize在编辑器左下角显示当前文件大小]]></content>
-      <categories>
-        <category>Atom编辑器</category>
-      </categories>
-      <tags>
-        <tag>Editor</tag>
-      </tags>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[python中的函数]]></title>
+      <url>/2017/11/10/pythonBase5/</url>
+      <content type="html"><![CDATA[<h1 id="python中的函数"><a href="#python中的函数" class="headerlink" title="python中的函数"></a>python中的函数</h1><blockquote>
+<p>函数的特性</p>
+<ol>
+<li>功能性</li>
+<li>隐藏细节</li>
+<li>避免编写重复的代码<br>round<br>round可以设置保留一个浮点数小数点后几位 round(a, x) x即保留的位数(会四舍五入)<br>在python shell中可以使用help()函数来查找python相关内置函数的使用文档<br>如果想要打印python之禅的话可以使用 import this 然后回车<br>python函数中可以没有值传入</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>在函数体内可以使用return关键字， 如果没有，那么默认是返回None<br>python递归默认次数为995次，不过可以自定义(sys.setrecursionlimit(1000000))<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x, y)</span>:</span></div><div class="line">      result = x + y</div><div class="line">      <span class="keyword">return</span> result <span class="comment"># 如果不加，就会返回None</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">toPrint</span><span class="params">(code)</span>:</span></div><div class="line">      print(code)</div><div class="line">      </div><div class="line">add(<span class="number">2</span>, <span class="number">3</span>)</div><div class="line">toPrint(<span class="string">"I love Python"</span>)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x, y)</span>:</span></div><div class="line">      result = x + y</div><div class="line">      <span class="keyword">return</span> result <span class="comment"># 如果没有return，就会返回None</span></div><div class="line">      </div><div class="line"><span class="comment"># 返回多个值，可以直接return a, b用逗号隔开, 这样返回的是一个元组</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">toPrint</span><span class="params">(code)</span>:</span></div><div class="line">      print(code)</div><div class="line">      </div><div class="line">add(<span class="number">2</span>, <span class="number">3</span>)</div><div class="line">toPrint(<span class="string">"I love Python"</span>)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>另一个代码实例<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">damage</span><span class="params">(skill, skill2)</span>:</span></div><div class="line">    damage = skill * <span class="number">3</span></div><div class="line">    damage2 = skill2 * <span class="number">2</span> + <span class="number">10</span></div><div class="line">    <span class="keyword">return</span> damage1, damage2</div><div class="line"> </div><div class="line">skill_damage, skill2_damage = damage(<span class="number">3</span>, <span class="number">6</span>)</div><div class="line">  </div><div class="line">print(skill_damage, skill2_damage)</div><div class="line"><span class="comment"># 9 22</span></div></pre></td></tr></table></figure></p>
+<p>序列解包<br>  <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x, y, z = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span></div><div class="line">print(x, y, z)</div><div class="line"># <span class="number">1</span> <span class="number">2</span> <span class="number">3</span></div><div class="line">x, y = y, x</div><div class="line"># <span class="number">2</span> <span class="number">1</span> <span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>函数的参数<br>在函数定义时传入的参数一般叫做形式参数，而调用的时候传入的参数叫实际参数<br>关键字参数<br>  <figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  def <span class="builtin-name">add</span>(x, y):</div><div class="line">    # x, y即为形参</div><div class="line">    result = x + y</div><div class="line">    return result</div><div class="line"></div><div class="line">c = <span class="builtin-name">add</span>(<span class="attribute">y</span>=3, <span class="attribute">x</span>=2) # 传入的即为关键字参数(这样代码的可读性更高)</div></pre></td></tr></table></figure></p>
+<p>默认参数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_your_info</span><span class="params">(name, gender, age, school)</span>:</span></div><div class="line">    print(<span class="string">'我叫'</span> + name)</div><div class="line">    print(<span class="string">'我今年'</span> + str(age) + <span class="string">'岁'</span>)</div><div class="line">    print(<span class="string">''</span> + gender + <span class="string">'的'</span>)</div><div class="line">    print(<span class="string">'我在'</span> + school + <span class="string">'读书'</span>)</div><div class="line">print_your_info(<span class="string">'biubiubiu'</span>, <span class="string">'gay'</span>, <span class="number">19</span>, <span class="string">'秋名山小学'</span>)</div><div class="line"><span class="comment"># 可以在函数传参的时候直接赋值，这样在调用的时候可以不用传入，会使用默认赋予的参数值</span></div><div class="line"><span class="comment"># 必须参数必须放在默认参数之前</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> python基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Code </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python包、模块、函数和作用域]]></title>
+      <url>/2017/11/02/PythonBase4/</url>
+      <content type="html"><![CDATA[<h1 id="python中的包"><a href="#python中的包" class="headerlink" title="python中的包"></a>python中的包</h1><ol>
+<li>包中包含模块，模块中包含类，类中包含函数和变量</li>
+<li>一般一个文件夹可以默认为一个包<blockquote>
+<p>如果想要一个文件夹变成python的一个包，那么该文件夹下应该包含<strong>init</strong>.py，这个文件本身也算一个模块<br><strong>init</strong>模块的名字和文件夹的名字同名</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h1><blockquote>
+<p>我们应该更多的考虑模块复用的方法，因为很多时候一个模块的功能是要被大量使用的，可以通过import关键字来导入<br>一定要先引入，再使用！<br>也可以用as关键字来将命名空间和模块命名成一个单独的变量，比如 import scrapy.requests as rq 那么我们使用requests的时候就可以用rq来代替了<br>也可以这样: from scrapy import requests<br>可以通过from xxx import *导入所有<br>代码示例<br>    <figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">__all__ = [<span class="string">"a"</span>, <span class="string">"b"</span>] <span class="comment"># a b就是想要被用*导入的模块</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>同时引入多个模块<br>  from xxx import a, b, c<br>如果要倒入很多的方法或者变量之类的, 要换行隔开，在第一行的末尾加上一个反斜杠，否则会报错，或者加一个括号也可以<br>无论导入的是模块，变量还是方法，都会运行<strong>init</strong>.py<br>可以在init.py中定义all, 这样就可以通过 from x import * 导入x包下制定的模块(init和all左右都自带双下划线)<br>包和模块是不会被重复的导入的<br>要避免循环导入</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> python基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Code </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python分支、循环、条件与枚举]]></title>
+      <url>/2017/10/18/pythonBase3/</url>
+      <content type="html"><![CDATA[<h1 id="表达式的概念"><a href="#表达式的概念" class="headerlink" title="表达式的概念"></a>表达式的概念</h1><ul>
+<li>表达式(Expression)是运算符(operator)和操作数(operand)所构成的序列</li>
+<li>且(and)运算优先级大于或(or)运算</li>
+<li>改变优先级可以使用括号(和数学基本概念是一样的0.0)</li>
+</ul>
+<h1 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h1><ol>
+<li><p>if</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myMood = <span class="keyword">True</span></div><div class="line"><span class="keyword">if</span> myMood:</div><div class="line">      <span class="keyword">print</span>(<span class="string">'go to school'</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>if else</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">myMood = <span class="keyword">True</span></div><div class="line"><span class="keyword">if</span> myMood:</div><div class="line">      <span class="keyword">print</span>(<span class="string">'go to school'</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">      <span class="keyword">print</span>(<span class="string">'嘿嘿嘿哈'</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>python建议用两个单词，中间加下划线，来命名</p>
+<a id="more"></a></li>
+<li><p>an example</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">user_account = <span class="string">"xiaoming"</span></div><div class="line">user_password = <span class="string">"20150910"</span></div><div class="line"></div><div class="line"><span class="builtin-name">print</span>(<span class="string">"please input your account:"</span>)</div><div class="line">account = input()</div><div class="line"><span class="builtin-name">print</span>(<span class="string">"please input your password"</span>)</div><div class="line">password = input()</div><div class="line"><span class="keyword">if</span> account == user_account <span class="keyword">and</span> password == user_password:</div><div class="line">  <span class="builtin-name">print</span>(<span class="string">"success"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">  <span class="builtin-name">print</span>(<span class="string">"fail"</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>在pylint中，只要不在函数和类中的变量，都会被他认为是一个常量</p>
+</li>
+<li>pass是在没有进一步的逻辑的时候使用，阻止程序报错</li>
+<li>如果函数层级太多，可以把其中的一部分逻辑提取成一个函数，减少代码的层级</li>
+<li>python中不需要太多的括号之类的，一般都是用缩进来决定逻辑的优先级</li>
+<li><p>an example:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> = input()</div><div class="line"><span class="function"><span class="title">print</span><span class="params">(<span class="string">"a is"</span> + a)</span></span></div><div class="line"><span class="keyword">if</span> <span class="selector-tag">a</span> == <span class="number">1</span>:</div><div class="line">    print(<span class="string">"apple"</span>)</div><div class="line">elif <span class="selector-tag">a</span> == <span class="number">2</span>:</div><div class="line">    print(<span class="string">"banana"</span>)</div><div class="line">elif <span class="selector-tag">a</span> == <span class="number">3</span>:</div><div class="line">    print(<span class="string">"orange"</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">   print(<span class="string">"QAQ"</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>python中没有switch这个用法</p>
+</li>
+<li>input接收的是一个字符串<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1></li>
+<li>while循环主要是用于递归</li>
+<li><p>for循环主要是用来遍历/循环 序列或者集合，字典</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="selector-tag">a</span>:</div><div class="line">    print(x)</div></pre></td></tr></table></figure>
+</li>
+<li><p>打印子列表的话,可以嵌套一层循环</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>], (<span class="number">100</span>, <span class="number">200</span>)]</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="selector-tag">a</span>:</div><div class="line">    <span class="keyword">for</span> <span class="selector-tag">b</span> <span class="keyword">in</span> x:</div><div class="line">        print(b)</div></pre></td></tr></table></figure>
+</li>
+<li><p>for同样可以和else进行搭配使用， else内的逻辑一般是列表循环完的时候执行</p>
+</li>
+<li>break强行终止循环 continue直接进行下一步的逻辑</li>
+<li><p>以下是示例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  a = [1,2,3]</div><div class="line"></div><div class="line">  <span class="keyword">for</span> x <span class="keyword">in</span> a:</div><div class="line">      <span class="keyword">if</span> x == 2:</div><div class="line">          <span class="built_in">break</span></div><div class="line">      <span class="built_in">print</span>(x)</div><div class="line"><span class="comment"># 1</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  a = [1,2,3]</div><div class="line">  <span class="keyword">for</span> x <span class="keyword">in</span> a:</div><div class="line">      <span class="keyword">if</span> x == 2:</div><div class="line">          <span class="built_in">continue</span></div><div class="line">      <span class="built_in">print</span>(x)</div><div class="line"><span class="comment"># 1 3</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>for和range</p>
+<blockquote>
+<p>代码实例</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(0, 10):</div><div class="line">    <span class="builtin-name">print</span>(x)</div><div class="line"><span class="comment"># 0 1 2 3 4 5 6 7 8 9</span></div></pre></td></tr></table></figure>
+<p>range(a, b) a为起始数字，而b为偏移量， 即总共有多少数字<br>代码示例2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(0, 10, 2):</div><div class="line">     <span class="built_in">print</span>(x)</div><div class="line"> <span class="comment"># 0 2 4 6 8</span></div></pre></td></tr></table></figure>
+<p>代码示例3</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="built_in">in</span> range(<span class="number">0</span>,<span class="number">10</span>,<span class="number">2</span>):</div><div class="line">    print(x, <span class="keyword">end</span>=' | <span class="type">')</span></div><div class="line"><span class="type"># 0</span> | <span class="type">2</span> | <span class="type">4</span> | <span class="type">6</span> | <span class="type">8</span></div></pre></td></tr></table></figure>
+<p>代码示例4</p>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> x <span class="built_in">in</span> range(<span class="number">10</span>, <span class="number">0</span>, <span class="number">-2</span>):</div><div class="line">    print(x, <span class="keyword">end</span>=' | <span class="type">')</span></div><div class="line"><span class="type"># 10</span> | <span class="type">8</span> | <span class="type">4</span> | <span class="type">6</span> | <span class="type">2</span></div></pre></td></tr></table></figure>
+<p>代码示例4</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">a</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</div><div class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="built_in">len</span>(<span class="keyword">a</span>), <span class="number">2</span>):</div><div class="line">    print(<span class="keyword">a</span>[i], <span class="keyword">end</span>=<span class="string">' | '</span>)</div><div class="line"></div><div class="line"><span class="comment"># 1 | 3 | 5 | 7</span></div></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">a</span> = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</div><div class="line">b = <span class="keyword">a</span>[<span class="number">0</span>:<span class="built_in">len</span>(<span class="keyword">a</span>):<span class="number">2</span>]</div><div class="line">print(b)</div><div class="line"><span class="comment"># [1, 3, 5, 7]</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> python基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Code </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python变量与运算符]]></title>
+      <url>/2017/10/13/PythonBase2/</url>
+      <content type="html"><![CDATA[<h1 id="变量与运算符"><a href="#变量与运算符" class="headerlink" title="变量与运算符"></a>变量与运算符</h1><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><blockquote>
+<p>int str tuple（不可改变）值类型<br>list set dict (可变) 引用类型<br>id函数(显示某一个变量在内存中的地址)<br>变量的内存地址是16进制的<br>字符串是不可改变的，但是通过+号运算符的话，两个字符串相加，成为一个新的字符串，那么就不违反字符串不可改变的规则<br>// 是整除的意思<br>余数使用 % 号<br>次方用 ** 来计算<br>is 和 == 的区别是 == 是比较两个变量的值， 而is是比较两个变量的身份是否相等(比较两个变量的内存地址)<br>运算符归纳总结<br>python中的isinstance函数是用来判断变量的类型的isinstance(a, str)，str位置可以接受元组的类型<br>python中不存在常量, 因为他没有机制去阻止我们修改，但是为了防止pylint报警告， 会将常量的字母都大写</p>
+</blockquote>
+<a id="more"></a>
+<p><img src="http://oyqymf34p.bkt.clouddn.com/python%E8%BF%90%E7%AE%97%E7%AC%A6.png" alt=""></p>
+<h3 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h3><p><img src="http://oyqymf34p.bkt.clouddn.com/%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7.jpg" alt=""></p>
+<h2 id="元组和列表的区别"><a href="#元组和列表的区别" class="headerlink" title="元组和列表的区别"></a>元组和列表的区别</h2><pre><code>1. 元组不可变，列表可变。
+2. 往列表中添加元素可以使用append函数， 例如
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">c = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">c.append(<span class="number">4</span>)</div><div class="line">c =&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div></pre></td></tr></table></figure>
+
+3. 访问元组中的列表或者列表中的列表或者元组中的元组中的元素可以参考二维数组。
+4. 列表与列表和元组和元组之间可以做比较，都是从内部第一个元素开始作比较，以此类推。
+5. 一个整数(0为False), 浮点数，列表，元组， 字典默认为True,一个空(&apos;&apos;)默认为False,空列表，元组为False
+6. 如果[] or [1] 他默认返回True的， and默认返回false
+7. 1 and 2 默认返回大的那个， 1 or 2 返回1(因为他从第一个元素开始检索，只要碰到为真的，那就返回真的那个元素)
+</code></pre><h2 id="字典的成员运算符"><a href="#字典的成员运算符" class="headerlink" title="字典的成员运算符"></a>字典的成员运算符</h2><blockquote>
+<p>字典的成员运算时通过键值对(key-value)中的key来进行运算。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> python基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Code </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python数据类型]]></title>
+      <url>/2017/07/12/PythonBase/</url>
+      <content type="html"><![CDATA[<h1 id="类型的重要概念"><a href="#类型的重要概念" class="headerlink" title="类型的重要概念"></a>类型的重要概念</h1><blockquote>
+<p>布尔类型属于Number类型。<br>字符串和元组是不可变的， 而列表是可变的。<br>元组中只有一个元素的，等于括号不存在，比如。<br>(“hello”) = “hello”<br>如果想要表示只有一个元素的元组，那么就要这样，比如(1,)多一个逗号。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="集合-set-的相关操作"><a href="#集合-set-的相关操作" class="headerlink" title="集合(set)的相关操作"></a>集合(set)的相关操作</h1><pre><code>1. 集合是无序的，所以不能yong&quot;[0]&quot;这样的操作
+2. 集合是不重复的
+3. 集合也是可以用len函数来计算长度的
+4. 集合可以用&quot;-&quot;来求两个集合的差值， “&amp;”来求交集，&quot;|&quot;求并集
+</code></pre><h1 id="字典的相关操作-key-value键值对是其最基本的概念"><a href="#字典的相关操作-key-value键值对是其最基本的概念" class="headerlink" title="字典的相关操作(key-value键值对是其最基本的概念)"></a>字典的相关操作(key-value键值对是其最基本的概念)</h1><blockquote>
+<p>通过key来访问value, 字典不能有相同的key, 如果有，会自动删除前面重复的key以及他的value<br>数字1和字符串1会被识别为两个不同的key</p>
+</blockquote>
+<h1 id="变量和运算符"><a href="#变量和运算符" class="headerlink" title="变量和运算符"></a>变量和运算符</h1><blockquote>
+<p>命名要优雅， 可读性要高<br>系统关键字不能出现在变量名中,比如and, if</p>
+</blockquote>
+<p><img src="http://oyqymf34p.bkt.clouddn.com/pythonBase1.png" alt=""></p>
+]]></content>
+      
+        <categories>
+            
+            <category> python基础 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Code </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[自用atom插件及相关介绍]]></title>
+      <url>/2017/05/12/atomPackage/</url>
+      <content type="html"><![CDATA[<ol>
+<li><p>activate-power-mode</p>
+<blockquote>
+<p>能够让你的代码飞起来！<br>可以像老师写板书一样飞舞粉笔灰(0_0)</p>
+</blockquote>
+</li>
+<li><p>atom-beautify<br>可以格式化基本上你见过的任何的代码(包括SQL文件)</p>
+</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li><p>atom-clock<br>就是在编辑器右下角加一个显示时间的东东</p>
+</li>
+<li><p>atom-bracket-highlight</p>
+<blockquote>
+<p>高亮成对的括号<br>让你不会再找不到另一半!</p>
+</blockquote>
+</li>
+<li><p>atom-ternjs</p>
+<blockquote>
+<p>补全Node.js代码!<br>补全JQuery代码!<br>补全Angular代码!<br>补全ES6代码段！</p>
+</blockquote>
+</li>
+<li><p>atom-django<br>django语法支持，代码段提示</p>
+</li>
+<li><p>atom-python-run<br>在atom编辑器中运行python代码，而不是命令行中</p>
+</li>
+<li><p>autocomplete-python-jedi<br>python补全(使用jedi)</p>
+</li>
+<li><p>autoclose-html<br>自动闭合html标签</p>
+</li>
+<li><p>autocomplete-paths<br>自动补全文件路径</p>
+</li>
+<li><p>pigments<br>高亮显示对应的颜色RGB</p>
+</li>
+<li><p>minimap<br>不解释！！</p>
+</li>
+<li><p>minimap-pigments<br>在代码地图中高亮显示RGB颜色</p>
+</li>
+<li><p><a href="https://github.com/emmetio/emmet-atom" target="_blank" rel="external">emmet</a><br>快速生成html代码<br>div.hello (Tab)=&gt;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"hello"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>highlight-selected<br>高亮显示选择的单词，标签</p>
+</li>
+<li><p>linter<br>语法检查(可安装对应的检查工具)<br>linter-eslint<br>linter-csslint<br>linter-tslint</p>
+</li>
+<li><p>react-snippets<br>react代码段提示</p>
+</li>
+<li><p>platformio-ide-terminal<br>在atom中嵌入一个终端</p>
+</li>
+<li><p>atom-wx<br>微信语法支持</p>
+</li>
+<li><p>language-babel<br>支持graphql, jsx等(react开发者必备)</p>
+</li>
+<li><p>json-colorer<br>彩色化json(看起来更直观)</p>
+</li>
+<li><p><a href="https://github.com/klorenz/atom-regex-railroad-diagrams" target="_blank" rel="external">regex-railroad-diagram</a><br>图形化正则表达式(据说很赞，详细使用参见github)</p>
+</li>
+<li><p>MagicPython<br>更好的python语法高亮支持</p>
+</li>
+<li><p>filesize<br>在编辑器左下角显示当前文件大小</p>
+</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> Atom编辑器 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Editor </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
 </search>

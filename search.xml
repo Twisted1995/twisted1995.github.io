@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python中的函数]]></title>
+    <url>%2F2017%2F11%2F10%2FpythonBase5%2F</url>
+    <content type="text"><![CDATA[python中的函数 函数的特性 功能性 隐藏细节 避免编写重复的代码roundround可以设置保留一个浮点数小数点后几位 round(a, x) x即保留的位数(会四舍五入)在python shell中可以使用help()函数来查找python相关内置函数的使用文档如果想要打印python之禅的话可以使用 import this 然后回车python函数中可以没有值传入在函数体内可以使用return关键字， 如果没有，那么默认是返回Nonepython递归默认次数为995次，不过可以自定义(sys.setrecursionlimit(1000000))123456789 def add(x, y): result = x + y return result # 如果不加，就会返回None def toPrint(code): print(code) add(2, 3)toPrint("I love Python")]]></content>
+      <categories>
+        <category>python基础</category>
+      </categories>
+      <tags>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python包、模块、函数和作用域]]></title>
     <url>%2F2017%2F11%2F02%2FPythonBase4%2F</url>
     <content type="text"><![CDATA[python中的包 包中包含模块，模块中包含类，类中包含函数和变量 一般一个文件夹可以默认为一个包 如果想要一个文件夹变成python的一个包，那么该文件夹下应该包含init.py，这个文件本身也算一个模块init模块的名字和文件夹的名字同名 导入模块 我们应该更多的考虑模块复用的方法，因为很多时候一个模块的功能是要被大量使用的，可以通过import关键字来导入一定要先引入，再使用！也可以用as关键字来将命名空间和模块命名成一个单独的变量，比如 import scrapy.requests as rq 那么我们使用requests的时候就可以用rq来代替了也可以这样: from scrapy import requests可以通过from xxx import *导入所有代码示例 1__all__ = ["a", "b"] # a b就是想要被用*导入的模块 同时引入多个模块 from xxx import a, b, c如果要倒入很多的方法或者变量之类的, 要换行隔开，在第一行的末尾加上一个反斜杠，否则会报错，或者加一个括号也可以无论导入的是模块，变量还是方法，都会运行init.py可以在init.py中定义all, 这样就可以通过 from x import * 导入x包下制定的模块(init和all左右都自带双下划线)包和模块是不会被重复的导入的要避免循环导入]]></content>

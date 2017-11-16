@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="时光">
 <meta property="og:description" content="面向对象最核心的是类和对象 类在命名的时候一般首字母大写(MyGirlfrend) 在类的内部我们可以定义变量，函数。 123456class Student():    name = &apos;&apos;    age = 0    def print_info():        pass  在python中， 类的实例化直接用 比如 student = Student()来实现，无需new 这个关键字  调">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-12T18:14:02.460Z">
+<meta property="og:updated_time" content="2017-11-15T05:46:06.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python面向对象">
 <meta name="twitter:description" content="面向对象最核心的是类和对象 类在命名的时候一般首字母大写(MyGirlfrend) 在类的内部我们可以定义变量，函数。 123456class Student():    name = &apos;&apos;    age = 0    def print_info():        pass  在python中， 类的实例化直接用 比如 student = Student()来实现，无需new 这个关键字  调">
@@ -386,6 +386,60 @@
 <li>调用类里面的方法可以这样：student.print_info()</li>
 <li>在类中定义函数一般在传参的括号里加上 <strong>self</strong></li>
 <li>如果要在类中定义的函数中引用类中定义的变量，<strong>必须用self关键字</strong>， 比如self.name</li>
+<li>类最基本的作用：封装，所以一般不要把函数调用放到类的内部</li>
+<li>方法和函数的区别<blockquote>
+<p>方法一般是设计层面说法<br>函数一般是面向过程的一种概念<br>访问实例变量一般要用self.</p>
+</blockquote>
+</li>
+<li>当类被实例化以后，他就变成了一个具体的对象</li>
+<li><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">()</span></span><span class="symbol">:</span></div><div class="line">    <span class="comment"># 构造函数</span></div><div class="line">    passa</div></pre></td></tr></table></figure>
+</li>
+<li><p>当我们实例化一个对象的时候，会自动调用类里面的构造函数</p>
+</li>
+<li>构造函数不能强制返回一个字符串</li>
+<li>一般在构造函数中初始化对象的属性</li>
+<li>类变量和实例变量<blockquote>
+<p>类变量就是定义在类中，但是在函数体之外的变量。通常是不用self.变量名赋值的变量。它对于所有实例化的对象中是公用的<br>实例变量就是定义在方法中的变量， 使用self绑定倒实例上的变量， 只是对当前实例起作用<br>类变量的访问一般都是用类名.类变量来访问<br>实例变量在类的内部用self.实例变量访问，在类的外部用对象名.实例变量访问<br>实例变量的形式对类变量重新赋值以后，类变量的值不会随之变化<br>实例变量对每一个对象都是不可见的，每一个对象拥有可能不同的值</p>
+</blockquote>
+</li>
+<li><p>self与实例方法</p>
+<blockquote>
+<p>python中类的方法中有一个额外的第一个参数self,在调用的时候不必为这个参数赋值(显胜于隐)<br>self代表当前对象的地址<br>构造函数其实就是一个特殊的实例方法，只是调用的方式的不同<br>在类中的函数中访问类变量可以直接使用<strong>class</strong>.变量名 来访问(class两边带双下划线)<br>在类中的函数中访问类变量也可以使用类名.变量名 来访问</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">       <span class="class"><span class="keyword">class</span> <span class="title">Student</span>():</span></div><div class="line">          sum = <span class="number">0</span></div><div class="line">          <span class="comment"># name = ''</span></div><div class="line">          <span class="comment"># age = 0</span></div><div class="line">          <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, name, age)</span></span><span class="symbol">:</span></div><div class="line">            <span class="comment"># 构造函数</span></div><div class="line">            <span class="comment"># 初始化对象</span></div><div class="line">            <span class="keyword">self</span>.name = name</div><div class="line">            <span class="keyword">self</span>.age = age</div><div class="line">    ---</div><div class="line"><span class="symbol">title:</span> python面向对象</div><div class="line"><span class="symbol">date:</span> <span class="number">2017</span>-<span class="number">11</span>-<span class="number">4</span> <span class="number">21</span><span class="symbol">:</span><span class="number">16</span><span class="symbol">:</span><span class="number">15</span></div><div class="line"><span class="symbol">tags:</span> Code</div><div class="line"><span class="symbol">categories:</span> python基础</div><div class="line">--- )       <span class="keyword">self</span>.__class_<span class="number">_</span>.sum += <span class="number">1</span></div><div class="line">            print(<span class="string">'当前班级学生总数为：'</span> + str(<span class="keyword">self</span>.__class_<span class="number">_</span>.sum))</div><div class="line">            </div><div class="line">            @classmethod <span class="comment"># 定义类方法(装饰器)</span></div><div class="line">            <span class="function"><span class="keyword">def</span> <span class="title">plus_sum</span><span class="params">(cls)</span></span><span class="symbol">:</span></div><div class="line">              pass</div><div class="line">              </div><div class="line">            @staticmethod <span class="comment"># 静态方法</span></div><div class="line">            <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x, y)</span></span><span class="symbol">:</span></div><div class="line">                pass</div></pre></td></tr></table></figure>
+</blockquote>
+<ol>
+<li>类方法的作用就是操作和类相关的变量</li>
+<li>静态方法的内部同样可以访问类变量</li>
+<li>最好不要直接对类变量进行赋值，而是应该暴露一个方法，用该方法操作类变量</li>
+<li>在python中如果要私有一个方法，那么可以在方法名前面加上双下划线</li>
+<li>虽然”<strong>score”是定义了一个私有成员变量，但是如果这样设置student.</strong>score = 1, 也是可以的<blockquote>
+<p>因为这样相当于新添加了一个 <strong>私有成员变量</strong></p>
+</blockquote>
+</li>
+<li>如果想要访问类的私有变量可以这样做：单下划线+类名+双下划线+变量名</li>
+</ol>
+</li>
+</ol>
+<h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><ol>
+<li><p>一个模块最好只写一个类</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">   from c6 import people</div><div class="line">   </div><div class="line">   <span class="class"><span class="keyword">class</span> <span class="title">S</span>---</span></div><div class="line"><span class="symbol">title:</span> python面向对象</div><div class="line"><span class="symbol">date:</span> <span class="number">2017</span>-<span class="number">11</span>-<span class="number">4</span> <span class="number">21</span><span class="symbol">:</span><span class="number">16</span><span class="symbol">:</span><span class="number">15</span></div><div class="line"><span class="symbol">tags:</span> Code</div><div class="line"><span class="symbol">categories:</span> python基础</div><div class="line">---tudent(people)<span class="symbol">:</span></div><div class="line">       sum = <span class="number">0</span></div><div class="line">       <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, name, age)</span></span><span class="symbol">:</span></div><div class="line">          <span class="keyword">self</span>.name = name</div><div class="line">          <span class="keyword">self</span>.age = age</div><div class="line">          <span class="keyword">self</span>.__score = <span class="number">0</span></div><div class="line">          <span class="keyword">self</span>.__class_<span class="number">_</span>.sum += <span class="number">1</span></div><div class="line">          </div><div class="line">       <span class="function"><span class="keyword">def</span> <span class="title">do_homework</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></div><div class="line">           print(<span class="string">'english homework'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>():</span></div><div class="line">   sum = <span class="number">0</span></div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, name, age)</span></span><span class="symbol">:</span></div><div class="line">       <span class="keyword">self</span>.name = name</div><div class="line">       <span class="keyword">self</span>.age = age</div><div class="line">       </div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">get_name</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></div><div class="line">       print(<span class="keyword">self</span>.name)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> c6 <span class="keyword">import</span> Human</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Human)</span>:</span></div><div class="line">  <span class="comment"># sum = 0</span></div><div class="line">  <span class="comment"># def __init__(self, school, name, age):</span></div><div class="line">  <span class="comment">#     self.name = name</span></div><div class="line">        self.school = school</div><div class="line">        Human.__init__(self, name, age)</div><div class="line">  <span class="comment"># self必须传入，否则会报错， 这里被当作了一个普通方法的调用，所以要加</span></div><div class="line">  <span class="comment">#     self.age = age</span></div><div class="line">  <span class="comment">#     self.__score = 0</span></div><div class="line">  <span class="comment">#     self.__class__.sum += 1</span></div><div class="line">  </div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">do_homework</span><span class="params">(self)</span>:</span></div><div class="line">      print(<span class="string">'english homework'</span>)</div><div class="line">      </div><div class="line">  student1 = Student()</div><div class="line">  print(student1.sum)</div><div class="line">  <span class="comment"># 0</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>python可以多继承</p>
+<blockquote>
+<p>在设计类的过程中， 主线一般是单一继承的， 但是如果要添加新的功能，可以使用多继承<br>这种设计通常叫Mixin<br>在设计类的过程中，应该优先考虑多继承，而不是单一的太过复杂的继承关系</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chinese</span>(<span class="params"></span>)</span>:</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_chinese</span></span>(self):</div><div class="line">       print(<span class="symbol">'i</span>t<span class="symbol">'s</span> so difficult')</div><div class="line">       </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">English</span>(<span class="params"></span>)</span>:</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do</span> <span class="title">english</span></span>(self):</div><div class="line">       print(<span class="symbol">'i</span>t<span class="symbol">'s</span> so easy')</div><div class="line">       </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="params"><span class="type">Chinese</span>, <span class="type">English</span></span>)</span>:</div><div class="line">    pass</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>super关键字</p>
+<blockquote>
+<p>super接收两个参数  super(子类名, self).<strong>init</strong>(name, age) init带双下划线<br>如果子类和父类的函数名重名，那么会优先调用子类的函数<br>子类调用父类的方法，同样用super关键字<br>super()的好处是可以避免直接使用父类的名字，主要用于多继承<br>在python2中：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></div><div class="line">        print <span class="string">"Base created"</span></div><div class="line">     </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildA</span>(<span class="title">Base</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></div><div class="line">       Base.__init_<span class="number">_</span>(<span class="keyword">self</span>)</div><div class="line">       </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildB</span>(<span class="title">Base</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></div><div class="line">      <span class="keyword">super</span>(ChildB, <span class="keyword">self</span>).__init_<span class="number">_</span>()</div><div class="line">      </div><div class="line">print ChildA(), ChildB()</div></pre></td></tr></table></figure>
+<p>在python3中:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span>(<span class="title">object</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></div><div class="line">        print(<span class="string">"Base created"</span>)</div><div class="line">        </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildA</span>(<span class="title">Base</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></div><div class="line">        Base.__init_<span class="number">_</span>(<span class="keyword">self</span>)</div><div class="line">        </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildB</span>(<span class="title">Base</span>):</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></div><div class="line">        <span class="keyword">super</span>().__init_<span class="number">_</span>()</div><div class="line">        </div><div class="line">print(ChildA(), ChildB())</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
 </ol>
 
       
@@ -427,8 +481,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/10/pythonBase5/" rel="prev" title="python中的函数">
-                python中的函数 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/05/PythonBase7/" rel="prev" title="python正则表达式">
+                python正则表达式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -510,7 +564,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -575,7 +629,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象最核心的是类和对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象最核心的是类和对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象最核心的是类和对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象最核心的是类和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类的继承"><span class="nav-number">1.1.</span> <span class="nav-text">类的继承</span></a></li></ol></li></ol></div>
             
 
           </div>

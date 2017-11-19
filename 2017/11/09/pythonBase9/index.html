@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="枚举枚举类的好处 我们要定义常量的时候，用大写的变量通过整数定义，但是类型是int，并且仍然是变量枚举类型通常可以看做是一种标签或者一系列常量的集合，通常用于表示某些特定的有限集合枚举不能进行大小比较,但是可以做身份比较和 == 比较如果继承IntEnum的话， 那么每一个枚举成员的数值都必须为数字类型(在数据库中存取类型的时候建议使用数字来代替字符串)枚举类内部不能有两个同名的标签的，可以通过f">
+<meta name="description" content="匿名函数1234567def add(x, y):    return x + yprint(add(1, 2))f = lambda x, y: x + yprint(f(1, 2))  三元表达式 x &amp;gt; y ? x : y 判断x是否大于y,如果为真，就得到x， 不为真就得到ypython版三元表达式条件为真的时候返回的结果 if 条件判断 else 条件不为真的时候返回的结果r =">
 <meta name="keywords" content="Code">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python高级语法和用法">
-<meta property="og:url" content="http://yoursite.com/2017/11/07/pythonBase8/index.html">
+<meta property="og:title" content="高阶、匿名函数以及装饰器">
+<meta property="og:url" content="http://yoursite.com/2017/11/09/pythonBase9/index.html">
 <meta property="og:site_name" content="时光">
-<meta property="og:description" content="枚举枚举类的好处 我们要定义常量的时候，用大写的变量通过整数定义，但是类型是int，并且仍然是变量枚举类型通常可以看做是一种标签或者一系列常量的集合，通常用于表示某些特定的有限集合枚举不能进行大小比较,但是可以做身份比较和 == 比较如果继承IntEnum的话， 那么每一个枚举成员的数值都必须为数字类型(在数据库中存取类型的时候建议使用数字来代替字符串)枚举类内部不能有两个同名的标签的，可以通过f">
+<meta property="og:description" content="匿名函数1234567def add(x, y):    return x + yprint(add(1, 2))f = lambda x, y: x + yprint(f(1, 2))  三元表达式 x &amp;gt; y ? x : y 判断x是否大于y,如果为真，就得到x， 不为真就得到ypython版三元表达式条件为真的时候返回的结果 if 条件判断 else 条件不为真的时候返回的结果r =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-18T07:24:07.835Z">
+<meta property="og:updated_time" content="2017-11-19T12:01:17.181Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python高级语法和用法">
-<meta name="twitter:description" content="枚举枚举类的好处 我们要定义常量的时候，用大写的变量通过整数定义，但是类型是int，并且仍然是变量枚举类型通常可以看做是一种标签或者一系列常量的集合，通常用于表示某些特定的有限集合枚举不能进行大小比较,但是可以做身份比较和 == 比较如果继承IntEnum的话， 那么每一个枚举成员的数值都必须为数字类型(在数据库中存取类型的时候建议使用数字来代替字符串)枚举类内部不能有两个同名的标签的，可以通过f">
+<meta name="twitter:title" content="高阶、匿名函数以及装饰器">
+<meta name="twitter:description" content="匿名函数1234567def add(x, y):    return x + yprint(add(1, 2))f = lambda x, y: x + yprint(f(1, 2))  三元表达式 x &amp;gt; y ? x : y 判断x是否大于y,如果为真，就得到x， 不为真就得到ypython版三元表达式条件为真的时候返回的结果 if 条件判断 else 条件不为真的时候返回的结果r =">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/07/pythonBase8/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/09/pythonBase9/"/>
 
 
 
 
 
-  <title>python高级语法和用法 | 时光</title>
+  <title>高阶、匿名函数以及装饰器 | 时光</title>
   
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/pythonBase8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/09/pythonBase9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Twisted1995">
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python高级语法和用法</h1>
+          <h1 class="post-title" itemprop="name headline">高阶、匿名函数以及装饰器</h1>
         
 
         <div class="post-meta">
@@ -316,8 +316,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T21:12:34+08:00">
-                2017-11-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-09T17:12:34+08:00">
+                2017-11-09
               </time>
             
 
@@ -376,30 +376,35 @@
       
 
       
-        <h1 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h1><h2 id="枚举类的好处"><a href="#枚举类的好处" class="headerlink" title="枚举类的好处"></a>枚举类的好处</h2><blockquote>
-<p>我们要定义常量的时候，用大写的变量通过整数定义，但是类型是int，并且仍然是变量<br>枚举类型通常可以看做是一种标签或者一系列常量的集合，通常用于表示某些特定的有限集合<br>枚举不能进行大小比较,但是可以做身份比较和 == 比较<br>如果继承IntEnum的话， 那么每一个枚举成员的数值都必须为数字类型<br>(在数据库中存取类型的时候建议使用数字来代替字符串)<br>枚举类内部不能有两个同名的标签的，可以通过for循环来访问枚举类中的每一个实例<br> ‘@unique’ 装饰器可以限制枚举成员的值不重复<br>两个常量名称不同， 数值相同， 那么第二个就会被称作第一个的别名，而且通过for循环也不会访问到<br>  <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">   from <span class="class"><span class="keyword">enum</span> <span class="title">import</span> <span class="title">Enum</span></span></div><div class="line"></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">ANIMAL</span>(<span class="title">Enum</span>):</span></div><div class="line">      DOG = <span class="number">1</span></div><div class="line">      DOG_ALIAS = <span class="number">1</span> <span class="comment"># DOG的别名</span></div><div class="line">      CAT = <span class="number">2</span></div><div class="line">      DUCK = <span class="number">3</span></div><div class="line"></div><div class="line">  <span class="keyword">for</span> animal in <span class="symbol">ANIMAL:</span></div><div class="line">      print(animal)</div><div class="line">  <span class="comment"># ANIMAL.DOG</span></div><div class="line">  <span class="comment"># ANIMAL.CAT</span></div><div class="line">  <span class="comment"># ANIMAL.DUCK</span></div><div class="line"></div><div class="line">  <span class="keyword">for</span> animal in ANIMAL.__members__.items():</div><div class="line">     print(animal)</div><div class="line"></div><div class="line"> <span class="comment"># ('DOG', &lt;ANIMAL.DOG: 1&gt;)</span></div><div class="line"> <span class="comment"># ('DOG.ALIAS', &lt;ANIMAL.DOG: 1&gt;)</span></div><div class="line"> <span class="comment"># ('CAT', &lt;ANIMAL.CAT: 2&gt;)</span></div><div class="line"> <span class="comment"># ('DUCK', &lt;ANIMAL.DUCK: 3&gt;)</span></div><div class="line"></div><div class="line">  <span class="keyword">for</span> animal in ANIMAL.<span class="symbol">__members__:</span></div><div class="line">     print(animal)</div><div class="line"></div><div class="line"><span class="comment"># DOG</span></div><div class="line"><span class="comment"># DOG_ALIAS</span></div><div class="line"><span class="comment"># CAT</span></div><div class="line"><span class="comment"># DUCK</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>所以我们就可以为这样的枚举类型定义一个class, 每个常量都是class的唯一实例:<br>  <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">from <span class="class"><span class="keyword">enum</span> <span class="title">import</span> <span class="title">Enum</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ANIMAL</span>(<span class="title">Enum</span>):</span></div><div class="line">   DOG = <span class="number">1</span></div><div class="line">   CAT = <span class="number">2</span></div><div class="line">   DUCK = <span class="number">3</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-  <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"> from <span class="class"><span class="keyword">enum</span> <span class="title">import</span> <span class="title">Enum</span></span></div><div class="line"></div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">ANIMAL1</span>(<span class="title">Enum</span>):</span></div><div class="line">     DOG = <span class="number">1</span></div><div class="line">     CAT = <span class="number">2</span></div><div class="line">     DUCK = <span class="number">3</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ANIMAL2</span>(<span class="title">Enum</span>):</span></div><div class="line">    DOG = <span class="number">1</span></div><div class="line">    CAT = <span class="number">2</span></div><div class="line">    DUCK = <span class="number">3</span></div><div class="line">result = ANIMAL.DOG == ANIMAL2.DOG</div><div class="line">print(result)</div><div class="line"><span class="comment"># False</span></div></pre></td></tr></table></figure>
-  <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">from <span class="class"><span class="keyword">enum</span> <span class="title">import</span> <span class="title">Enum</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ANIMAL1</span>(<span class="title">Enum</span>):</span></div><div class="line">    DOG = <span class="number">1</span></div><div class="line">    CAT = <span class="number">2</span></div><div class="line">    DUCK = <span class="number">3</span></div><div class="line"></div><div class="line">a = <span class="number">1</span></div><div class="line">print(ANIMAL(<span class="number">1</span>))</div></pre></td></tr></table></figure>
-<blockquote>
-<p>python可以看做一切皆对象<br>另外一个函数的参数， 传递到另外的函数里<br>把一个函数当作另外一个函数的返回结果</p>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">curve_pre</span><span class="params">()</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">curve</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">pass</span></div><div class="line">    <span class="keyword">return</span> curve</div><div class="line"></div><div class="line">f = curve_pre()</div><div class="line">print(f(<span class="number">2</span>))</div><div class="line"><span class="comment"># 100</span></div></pre></td></tr></table></figure>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">10</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="keyword">return</span> a * x * x</div><div class="line"></div><div class="line">print(f1(<span class="number">2</span>))</div></pre></td></tr></table></figure>
-<blockquote>
-<p>闭包的概念： 闭包 = 函数 + 环境变量(都在一个大的函数内)<br>闭包的一些注意事项</p>
+        <h1 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">def <span class="builtin-name">add</span>(x, y):</div><div class="line">    return x + y</div><div class="line"></div><div class="line"><span class="builtin-name">print</span>(<span class="builtin-name">add</span>(1, 2))</div><div class="line"></div><div class="line">f = lambda x, y: x + y</div><div class="line"><span class="builtin-name">print</span>(f(1, 2))</div></pre></td></tr></table></figure>
 <ol>
-<li>局部变量不能影响外部变量</li>
-<li>如果函数的内部重新赋值了相同变量的值， 那么就不能形成一个闭包<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">origin</span> = <span class="number">0</span></div><div class="line"></div><div class="line">def <span class="built_in">go</span>(<span class="keyword">step</span>):</div><div class="line"> # global <span class="built_in">origin</span></div><div class="line">    new_pos = <span class="built_in">origin</span> + <span class="keyword">step</span></div><div class="line">    <span class="built_in">origin</span> = new_pos</div><div class="line">    <span class="built_in">return</span> new_pos</div><div class="line"><span class="built_in">print</span>(<span class="built_in">go</span>(<span class="number">2</span>))</div><div class="line"><span class="built_in">print</span>(<span class="built_in">go</span>(<span class="number">3</span>))</div><div class="line"><span class="built_in">print</span>(<span class="built_in">go</span>(<span class="number">6</span>))</div><div class="line">  # 不加global那一行会报错，因为<span class="built_in">origin</span>是一个全局变量</div><div class="line">  # <span class="number">2</span> <span class="number">5</span> <span class="number">11</span> 因为 <span class="built_in">origin</span>在函数内部被声明为了一个全局变量</div></pre></td></tr></table></figure>
+<li>三元表达式<blockquote>
+<p>x &gt; y ? x : y 判断x是否大于y,如果为真，就得到x， 不为真就得到y<br>python版三元表达式<br>条件为真的时候返回的结果 if 条件判断 else 条件不为真的时候返回的结果<br>r = x if x &gt; y else y</p>
+</blockquote>
 </li>
 </ol>
-<p>上述代码用闭包实现, 如下<br>  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">origin = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">factory</span><span class="params">(pos)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">go</span><span class="params">(step)</span>:</span></div><div class="line">        new_pos = pos + step</div><div class="line">        pos = new_pos</div><div class="line">        <span class="keyword">return</span> new_pos</div><div class="line"></div><div class="line">tourist = factory(origin)</div><div class="line">print(tourist(<span class="number">2</span>))</div><div class="line">print(tourist(<span class="number">3</span>))</div><div class="line">print(tourist(<span class="number">5</span>))</div><div class="line"><span class="comment"># 2 5 11</span></div></pre></td></tr></table></figure></p>
-</blockquote>
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> origin = <span class="number">0</span></div><div class="line"></div><div class="line"> <span class="function"><span class="keyword">def</span> <span class="title">factory</span><span class="params">(pos)</span>:</span></div><div class="line">     <span class="function"><span class="keyword">def</span> <span class="title">go</span><span class="params">(step)</span>:</span></div><div class="line">         <span class="keyword">nonlocal</span> pos</div><div class="line">         new_pos = pos + step</div><div class="line">         pos = new_pos</div><div class="line">         <span class="keyword">return</span> new_pos</div><div class="line">  tourist = factory(origin)</div><div class="line">  print(tourist(<span class="number">2</span>))</div><div class="line">  print(tourist(<span class="number">3</span>))</div><div class="line">  print(tourist(<span class="number">5</span>))</div><div class="line"><span class="comment"># 2 5 10</span></div></pre></td></tr></table></figure>
+<h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1> <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">list_x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">square</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="keyword">return</span> x * x</div><div class="line"></div><div class="line">r = map(square, lsit_x)</div><div class="line">print(list(r))</div></pre></td></tr></table></figure>
+<ol>
+<li>调用map函数以后，他会把集合中的每一个元素都传到定义的函数中</li>
+<li><p>另一种用法</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_x = [1,2,3,4,5,6,7,8]</div><div class="line"></div><div class="line">r = map(lambda x: x * x, lsit_x)</div><div class="line">print(list(r))</div><div class="line"><span class="comment"># 这样可以简化代码的逻辑</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>第三种实例</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_x = [1,2,3,4,5,6,7,8]</div><div class="line">list_y = [1,2,3,4,5,6,7,8]</div><div class="line"></div><div class="line">r = map(lambda x, y: x * x + y, lsit_x, list_y)</div><div class="line">print(list(r))</div></pre></td></tr></table></figure>
+</li>
+<li><p>第四种实例</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_x = [1, 2, 3, 4, 5, 6, 7, 8]</div><div class="line">list_y = [1, 2, 3, 4, 5, 6]</div><div class="line">r = map(lambda x, y: x * x + y, lsit_x, list_y)</div><div class="line">print(list(r))</div><div class="line"><span class="comment"># [2, 6, 12, 20, 30, 42]</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="reduce函数"><a href="#reduce函数" class="headerlink" title="reduce函数"></a>reduce函数</h1><ol>
+<li>涉及到连续计算的内容，可以使用reduce函数<figure class="highlight golo"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">from functools <span class="keyword">import</span> <span class="keyword">reduce</span></div><div class="line">list_x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</div><div class="line"><span class="comment"># 连续计算，连续调用lambda</span></div><div class="line">r = <span class="keyword">reduce</span>(lambda x, y:x + y, list_x)</div><div class="line"><span class="keyword">print</span>(r)</div><div class="line"><span class="comment"># 36</span></div><div class="line"><span class="comment"># 他的结果就是把之前两位数的和作为X, 下一位数作为y，以此类推</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</div><div class="line">list_x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</div><div class="line"><span class="comment"># 连续计算，连续调用lambda</span></div><div class="line">r = reduce(<span class="keyword">lambda</span> x, y:x + y, list_x, <span class="string">'aaa'</span>)</div><div class="line">print(r)</div><div class="line"><span class="comment"># aaa12345678</span></div></pre></td></tr></table></figure>
+<h1 id="filter函数"><a href="#filter函数" class="headerlink" title="filter函数"></a>filter函数</h1><ol>
+<li>为指定序列执行过滤操作<figure class="highlight golo"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">y = <span class="keyword">filter</span>(lambda x:x%<span class="number">2</span> != <span class="number">0</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</div><div class="line"><span class="keyword">print</span>(<span class="keyword">list</span>(a))</div><div class="line"><span class="comment"># [1,3]</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -430,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/05/PythonBase7/" rel="next" title="python正则表达式">
-                <i class="fa fa-chevron-left"></i> python正则表达式
+              <a href="/2017/11/07/pythonBase8/" rel="next" title="python高级语法和用法">
+                <i class="fa fa-chevron-left"></i> python高级语法和用法
               </a>
             
           </div>
@@ -440,8 +445,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/11/09/pythonBase9/" rel="prev" title="高阶、匿名函数以及装饰器">
-                高阶、匿名函数以及装饰器 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/10/pythonBase5/" rel="prev" title="python中的函数">
+                python中的函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -588,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举"><span class="nav-number">1.</span> <span class="nav-text">枚举</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举类的好处"><span class="nav-number">1.1.</span> <span class="nav-text">枚举类的好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">1.2.</span> <span class="nav-text">闭包</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#匿名函数"><span class="nav-number">1.</span> <span class="nav-text">匿名函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#map"><span class="nav-number">2.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#reduce函数"><span class="nav-number">3.</span> <span class="nav-text">reduce函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#filter函数"><span class="nav-number">4.</span> <span class="nav-text">filter函数</span></a></li></ol></div>
             
 
           </div>

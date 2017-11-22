@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="时光">
 <meta property="og:description" content="匿名函数1234567def add(x, y):    return x + yprint(add(1, 2))f = lambda x, y: x + yprint(f(1, 2))  三元表达式 x &amp;gt; y ? x : y 判断x是否大于y,如果为真，就得到x， 不为真就得到ypython版三元表达式条件为真的时候返回的结果 if 条件判断 else 条件不为真的时候返回的结果r =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-19T12:01:17.181Z">
+<meta property="og:updated_time" content="2017-11-22T08:12:02.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="高阶、匿名函数以及装饰器">
 <meta name="twitter:description" content="匿名函数1234567def add(x, y):    return x + yprint(add(1, 2))f = lambda x, y: x + yprint(f(1, 2))  三元表达式 x &amp;gt; y ? x : y 判断x是否大于y,如果为真，就得到x， 不为真就得到ypython版三元表达式条件为真的时候返回的结果 if 条件判断 else 条件不为真的时候返回的结果r =">
@@ -396,6 +396,7 @@
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">list_x = [1, 2, 3, 4, 5, 6, 7, 8]</div><div class="line">list_y = [1, 2, 3, 4, 5, 6]</div><div class="line">r = map(lambda x, y: x * x + y, lsit_x, list_y)</div><div class="line">print(list(r))</div><div class="line"><span class="comment"># [2, 6, 12, 20, 30, 42]</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
+<a id="more"></a>
 <h1 id="reduce函数"><a href="#reduce函数" class="headerlink" title="reduce函数"></a>reduce函数</h1><ol>
 <li>涉及到连续计算的内容，可以使用reduce函数<figure class="highlight golo"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">from functools <span class="keyword">import</span> <span class="keyword">reduce</span></div><div class="line">list_x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]</div><div class="line"><span class="comment"># 连续计算，连续调用lambda</span></div><div class="line">r = <span class="keyword">reduce</span>(lambda x, y:x + y, list_x)</div><div class="line"><span class="keyword">print</span>(r)</div><div class="line"><span class="comment"># 36</span></div><div class="line"><span class="comment"># 他的结果就是把之前两位数的和作为X, 下一位数作为y，以此类推</span></div></pre></td></tr></table></figure>
 </li>

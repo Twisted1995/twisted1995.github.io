@@ -12,17 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[python面试问题整理]]></title>
-    <url>%2F2017%2F11%2F09%2FpythonBase10%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>python基础</category>
-      </categories>
-      <tags>
-        <tag>Code</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[高阶、匿名函数以及装饰器]]></title>
     <url>%2F2017%2F11%2F09%2FpythonBase9%2F</url>
     <content type="text"><![CDATA[匿名函数1234567def add(x, y): return x + yprint(add(1, 2))f = lambda x, y: x + yprint(f(1, 2)) 三元表达式 x &gt; y ? x : y 判断x是否大于y,如果为真，就得到x， 不为真就得到ypython版三元表达式条件为真的时候返回的结果 if 条件判断 else 条件不为真的时候返回的结果r = x if x &gt; y else y map 123456list_x = [1,2,3,4,5,6,7,8]def square(x): return x * xr = map(square, lsit_x)print(list(r)) 调用map函数以后，他会把集合中的每一个元素都传到定义的函数中 另一种用法 12345list_x = [1,2,3,4,5,6,7,8]r = map(lambda x: x * x, lsit_x)print(list(r))# 这样可以简化代码的逻辑 第三种实例 12345list_x = [1,2,3,4,5,6,7,8]list_y = [1,2,3,4,5,6,7,8]r = map(lambda x, y: x * x + y, lsit_x, list_y)print(list(r)) 第四种实例 12345list_x = [1, 2, 3, 4, 5, 6, 7, 8]list_y = [1, 2, 3, 4, 5, 6]r = map(lambda x, y: x * x + y, lsit_x, list_y)print(list(r))# [2, 6, 12, 20, 30, 42] reduce函数 涉及到连续计算的内容，可以使用reduce函数1234567from functools import reducelist_x = [1, 2, 3, 4, 5, 6, 7, 8]# 连续计算，连续调用lambdar = reduce(lambda x, y:x + y, list_x)print(r)# 36# 他的结果就是把之前两位数的和作为X, 下一位数作为y，以此类推 123456from functools import reducelist_x = [1, 2, 3, 4, 5, 6, 7, 8]# 连续计算，连续调用lambdar = reduce(lambda x, y:x + y, list_x, 'aaa')print(r)# aaa12345678 filter函数 为指定序列执行过滤操作123y = filter(lambda x:x%2 != 0, [1,2,3,4])print(list(a))# [1,3]]]></content>

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[装饰器、协程...]]></title>
+    <url>%2F2017%2F12%2F21%2FpythonBase10%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>python基础</category>
+      </categories>
+      <tags>
+        <tag>Code</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python中的函数]]></title>
     <url>%2F2017%2F11%2F10%2FpythonBase5%2F</url>
     <content type="text"><![CDATA[python中的函数 函数的特性 功能性 隐藏细节 避免编写重复的代码roundround可以设置保留一个浮点数小数点后几位 round(a, x) x即保留的位数(会四舍五入)在python shell中可以使用help()函数来查找python相关内置函数的使用文档如果想要打印python之禅的话可以使用 import this 然后回车python函数中可以没有值传入 在函数体内可以使用return关键字， 如果没有，那么默认是返回Nonepython递归默认次数为995次，不过可以自定义(sys.setrecursionlimit(1000000))123456789 def add(x, y): result = x + y return result # 如果不加，就会返回None def toPrint(code): print(code)add(2, 3)toPrint("I love Python") 1234567891011 def add(x, y): result = x + y return result # 如果没有return，就会返回None# 返回多个值，可以直接return a, b用逗号隔开, 这样返回的是一个元组 def toPrint(code): print(code)add(2, 3)toPrint("I love Python") 另一个代码实例 123456789def damage(skill, skill2): damage = skill * 3 damage2 = skill2 * 2 + 10 return damage1, damage2skill_damage, skill2_damage = damage(3, 6)print(skill_damage, skill2_damage)# 9 22 序列解包 12345x, y, z = 1, 2, 3print(x, y, z)# 1 2 3x, y = y, x# 2 1 3 在函数定义时传入的参数一般叫做形式参数，而调用的时候传入的参数叫实际参数关键字参数 123456 def add(x, y): # x, y即为形参 result = x + y return resultc = add(y=3, x=2) # 传入的即为关键字参数(这样代码的可读性更高) 默认参数12345678def print_your_info(name, gender, age, school): print('我叫' + name) print('我今年' + str(age) + '岁') print('' + gender + '的') print('我在' + school + '读书')print_your_info('biubiubiu', 'gay', 19, '秋名山小学')# 可以在函数传参的时候直接赋值，这样在调用的时候可以不用传入，会使用默认赋予的参数值# 必须参数必须放在默认参数之前]]></content>
